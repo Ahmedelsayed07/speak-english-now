@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8">
+<title>Sample Unit — structure demo</title>
+<!--
+  Structure demo only. This file exists so the build pipeline has something
+  to compile. It is not course content.
+
+  Build:
+    python skills/speak-english-course/scripts/build_pdf.py \
+           examples/sample-unit.html output/sample-unit.pdf
+-->
+<style>
+@page {
+  size: A4;
+  margin: 20mm 15mm 18mm 15mm;
+  @bottom-center { content: counter(page); font-family: 'Carlito', sans-serif; font-size: 9pt; color: #8892a4; }
+  @bottom-right  { content: "Sample  ·  Speak English Now"; font-family: 'Carlito','Noto Sans Arabic', sans-serif; font-size: 7.5pt; color: #b8c0cf; }
+}
+@page cover { margin: 0; @bottom-center { content: none } @bottom-right { content: none } }
+
+* { box-sizing: border-box; }
+body { font-family: 'Carlito','Noto Sans Arabic', sans-serif; font-size: 11.5pt;
+       line-height: 1.85; color: #1d2330; direction: rtl; text-align: right; margin: 0; }
+p { margin: 0 0 8px; }
+h1, h2 { margin: 0; }
+
+/* cover */
+.cover { page: cover; width: 210mm; height: 297mm; background: #F9DDC4; position: relative; }
+.cov-top { background: #0b2f77; color: #fff; padding: 12mm 14mm 10mm; text-align: center; border-bottom: 4px solid #ffd166; }
+.cov-kicker { font-size: 10.5pt; letter-spacing: 1px; color: #ffd166; margin-bottom: 2mm; }
+.cov-brand { direction: ltr; unicode-bidi: isolate; font-size: 31pt; font-weight: bold; color: #fff; }
+.cov-ar { font-size: 15pt; color: #cfe0ff; margin-top: 2mm; }
+.cov-mid { text-align: center; padding-top: 20mm; }
+.cov-img { height: 120mm; width: auto; }
+.cov-bottom { position: absolute; bottom: 0; right: 0; left: 0; background: #0b2f77;
+              color: #fff; padding: 8mm 12mm; text-align: center; }
+.cov-credit { font-size: 12pt; color: #ffd166; }
+.cov-credit b { direction: ltr; unicode-bidi: isolate; color: #fff; }
+
+/* content */
+.chapter { break-before: page; }
+h1.mod { font-size: 21pt; color: #0b2f77; border-bottom: 3px solid #ffd166; padding-bottom: 5px; }
+.mod-meta { font-size: 10pt; color: #6b7488; margin-bottom: 14px; }
+h2 { break-after: avoid; font-size: 15.5pt; color: #123a8a; margin: 18px 0 8px; }
+
+/* NOTE: separate borders, not collapse — see references/pdf-pipeline.md */
+table { table-layout: fixed; width: 100%; border-collapse: separate; border-spacing: 0;
+        margin: 10px 0; font-size: 10.5pt; }
+th { background: #123a8a; color: #fff; border: 1px solid #123a8a; padding: 7px 9px;
+     text-align: right; font-weight: bold; }
+td { border: 1px solid #d7dce6; padding: 7px 9px; vertical-align: top; word-wrap: break-word; }
+tr:nth-child(even) td { background: #f7f9fc; }
+td.en-cell, th.en-cell { direction: ltr; unicode-bidi: isolate; text-align: left; }
+
+.box { break-inside: avoid; border-radius: 8px; padding: 10px 14px; margin: 10px 0; font-size: 11pt; }
+.tip  { background: #fff8e6; border-right: 5px solid #f0a500; }
+.warn { background: #ffeef0; border-right: 5px solid #e63946; }
+.box .lbl { font-weight: bold; display: block; margin-bottom: 3px; }
+.en { direction: ltr; unicode-bidi: isolate; }
+.writeline { border-bottom: 1px dashed #b8c0cf; height: 22px; margin: 8px 0; }
+.cb { display: inline-block; width: 11px; height: 11px; border: 1.5px solid #6b7488;
+      border-radius: 3px; margin-left: 6px; vertical-align: -1px; }
+.small { font-size: 9.5pt; color: #6b7488; }
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="cov-top">
+    <div class="cov-kicker">عيّنة · هيكل فقط</div>
+    <div class="cov-brand">Speak English Now</div>
+    <div class="cov-ar">نموذج وحدة — لاختبار البناء</div>
+  </div>
+  <div class="cov-mid">
+    <img src="../skills/speak-english-course/assets/abqour.png" class="cov-img" alt="">
+  </div>
+  <div class="cov-bottom">
+    <div class="cov-credit">تقديم وإعداد: <b>Ahmed Elsayed</b></div>
+  </div>
+</div>
+
+<div class="chapter">
+<h1 class="mod">عنوان الوحدة</h1>
+<div class="mod-meta">الأيام · الهدف من الوحدة في سطر</div>
+
+<p>فقرة تمهيدية قصيرة تشرح المشكلة اللي الوحدة بتحلها.</p>
+
+<h2>١. قسم فيه جدول</h2>
+<table>
+  <tr><th style="width:30%">العمود الأول</th><th class="en-cell">English column</th></tr>
+  <tr><td>صف أول</td><td class="en-cell">An English example sentence.</td></tr>
+  <tr><td>صف تاني</td><td class="en-cell">Another English example.</td></tr>
+</table>
+
+<div class="box tip"><span class="lbl">TIP</span>
+صندوق نصيحة. النصيحة بتبقى قاعدة عملية مش كلام عام.</div>
+
+<div class="box warn"><span class="lbl">⚠ TRAP</span>
+صندوق تحذير من غلطة بيقع فيها المتعلم العربي تحديدًا.</div>
+
+<h2>٢. قسم فيه فراغات للكتابة</h2>
+<p class="small">سطور يملاها المتعلم بخط إيده:</p>
+<div class="writeline"></div>
+<div class="writeline"></div>
+
+<h2>٣. تمرين</h2>
+<ul>
+  <li><span class="cb"></span> خطوة أولى</li>
+  <li><span class="cb"></span> خطوة تانية</li>
+</ul>
+</div>
+
+</body>
+</html>

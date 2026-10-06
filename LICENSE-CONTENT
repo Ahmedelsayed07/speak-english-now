@@ -1,0 +1,14 @@
+Course content licence
+======================
+
+The MIT licence in LICENSE covers the code, build scripts and templates in
+this repository only.
+
+Everything under content/, brand/ and docs/ — including all Arabic and English
+course text, lesson scripts, poster designs, PDFs, and the mascot characters
+"Abqour El-Shatour" and "Mr. Nori" — is Copyright (c) Ahmed Elsayed.
+All rights reserved.
+
+You may read it, learn from it, and quote it with attribution.
+You may not republish it, sell it, or run it as your own course without
+written permission.
