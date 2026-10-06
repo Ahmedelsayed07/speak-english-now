@@ -1,0 +1,11 @@
+output/
+*.built.html
+
+# Course content is private — keep it out of the public repo
+content/
+cohorts/
+students/
+
+__pycache__/
+.DS_Store
+.venv/
